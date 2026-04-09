@@ -11,5 +11,20 @@ const employees = [
   { id: 10, name: "Gwen Grollmann" },
 ];
 
+export function addEmployee(name) {
+  const employee = { id: employees.length + 1, name };
+  employee.push(employee);
+  return employee;
+}
+
+export function getEmployeesById(id) {
+  return employees.find((e) => e.id === id);
+}
+
+export function getRandomEmployee() {
+  const randomIndex = Math.floor(Math.random() * employees.length);
+  return employees[randomIndex];
+}
+
 /* WARNING: this must remain the default export in order for the tests to work! */
 export default employees;
